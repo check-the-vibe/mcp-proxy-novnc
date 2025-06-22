@@ -4,9 +4,10 @@
 
 # Load X resources configuration
 
+# Start desktop icons via pcmanfm
+pcmanfm --desktop &
 
-# Start xterm in fullscreen mode
-# xterm -name xterm-fullscreen -title "Terminal" &
+xterm -name xterm-fullscreen -title "Terminal" &
 
 # Wait a moment for xterm to start
 sleep 1

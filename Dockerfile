@@ -21,6 +21,7 @@ RUN apt-get update && \
         websockify \
         # Desktop environment
         fluxbox \
+        pcmanfm \
         xterm \
         # Programming languages and tools
         python3 \
@@ -82,6 +83,9 @@ COPY --chown=vibe:vibe servers.json /home/vibe/servers.json
 COPY --chown=vibe:vibe .mcp.json /home/vibe/.mcp.json
 COPY --chown=vibe:vibe fluxbox-startup /home/vibe/.fluxbox/startup
 COPY --chown=vibe:vibe Xresources /home/vibe/.Xresources
+
+RUN chmod +x /entrypoint.sh && \
+    chmod +x /home/vibe/.fluxbox/startup
 
 # Expose nginx port
 EXPOSE 8000 6080
