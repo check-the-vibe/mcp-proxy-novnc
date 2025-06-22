@@ -1,0 +1,21 @@
+{
+  "name": "Vibestack DevContainer",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "80": {
+      "label": "Web Server",
+      "onAutoForward": "openPreview",
+      "requireLocalPort": false,
+      "protocol": "http",
+      "visibility": "public"
+    }
+  },
+  "overrideCommand": false,
+  "init": true,
+  "postStartCommand": "echo 'Container ready!'",
+  "remoteUser": "vibe"
+}
